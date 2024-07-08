@@ -1,0 +1,30 @@
+{% extends "base/base.html" %} 
+{% block title %}Blogs{% endblock %} 
+{% block content %} 
+  <h2 class="fs-1 mb-3">Blogs</h2>
+  <div class="container-fluid d-flex">
+
+ <div class="w-25">
+  <h3>filter:</h3>
+    <a class="d-block link-underline link-underline-opacity-0" href="{% url 'blogs-list' %}?q=Tech">Tech</a>
+    <a class="d-block link-underline link-underline-opacity-0" href="{% url 'blogs-list' %}?q=General">General</a>
+    <a class="d-block link-underline link-underline-opacity-0" href="{% url 'blogs-list' %}?q=Life">Life</a>
+ </div> 
+
+  <div class="flex-fill ">
+     
+
+    {% for blog in blogs %}
+     <a class="link-underline link-underline-opacity-0" href="{% url 'blog-detail' blog.slug %}">
+      <div class="mb-3">
+        <h2>{{ blog.title }}</h2>
+        <span>{{ blog.updated_at |date:'M d, Y'}} </span>
+        <br/>
+        <span>{{ blog.description }}</span>
+      </div>
+
+     </a> 
+    {% endfor %}
+  </div>
+  </div>
+{% endblock %}

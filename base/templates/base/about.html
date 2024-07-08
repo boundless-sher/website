@@ -1,0 +1,21 @@
+{% extends "./base.html" %}
+{% block title %}about{% endblock %}
+{% block content %}
+  <h2 class="fs-1 pb-2">about me</h2>
+  <div class="container w-75 mt-4">
+    <p class="fs-4">
+  I am sherzod. Recently I have been using the alias <span class="fw-bold">
+    `boundless-sher`</span> because it seemed better not to have my legal name 
+    on all my social media. 
+  <br/><br/>
+Anyway I enjoy programming(except styling websites as you can probably tell) 
+and I am a big fan of all sorts of arts mostly movies, songs, drawings. 
+Whenever I visit other people's personal/blog websites they always seem to
+ have a lot of cool things to show and/or smart things to say which I have 
+ niether but I like the idea of blogging so here we are. 
+ <br/><br/> 
+Head over to <a href="{% url 'blogs-list' %}">blogs</a> to read some stuff I found interesting and wanted 
+to share or to <a href="{% url 'contact' %}">contact</a> if you want to contact me :)
+    </p>
+  </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "./base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+  <div class="container w-75">
+
+    <p class="fs-4">Hello There! <span class="fs-4 fst-italic">*read with obiwan voice*</span></p>
+    <h2 class="fw-bold fs-1 pt-2 mb-5">I am Sherzod.</h2>
+    <p class="fs-3 pt-3">
+      "Best way to learn is to teach" they say. So I try to share things I learn here 
+      in hopes that blogging about them will help me understand them better.
+      Also I am way too into philosophy and politics for my own good and I doubt I
+      can stop myself from writing about them. Anyway, check out my 
+      <a href="{% url 'blogs-list' %}">blogs</a>.
+      
+    </p>
+  </div>
+{% endblock %}
