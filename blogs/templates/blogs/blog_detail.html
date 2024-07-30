@@ -8,7 +8,7 @@
 
       <span class="fs-6">{{ blog.updated_at |date:'M d, Y'}} - {{ word_count}} words</span>
       <br/>
-      <span class="fs-5">{{ blog.description }}</span>
+      <span class="bg-light fs-4 fst-italic">{{ blog.description }}</span>
     </div>
     <p >
       {{ blog.body | markdown | safe}}
