@@ -1,0 +1,19 @@
+{% extends "base/base.html" %}
+{% block title %} my projects{% endblock title %}
+{% block content %}
+  <h2 class="fs-1 mb-3">Projects I have worked on</h2>
+  <div class="container-fluid d-flex">
+    <div class="d-flex ">
+      {% for project in projects %}
+        <div class="card me-2 mb-3 w-50">
+          <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">{{ project.title }}</h5>
+            <p class="card-text">{{ project.description }}</p>
+            <a href="{{ project.url }}" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}
