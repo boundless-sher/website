@@ -1,0 +1,26 @@
+
+
+  <div 
+    hx-swap-oob="innerHTML:#blogs-list" 
+
+      class="flex-fill " id="blogs-list">
+     
+
+    {% if  blogs %}
+      {% for blog in blogs %}
+      <a class="link-underline link-underline-opacity-0" href="{% url 'blog-detail' blog.slug %}">
+        <div class="mb-3">
+          <h2>{{ blog.title }}</h2>
+          <span>{{ blog.updated_at |date:'M d, Y'}} </span>
+          <br/>
+          <span>{{ blog.description }}</span>
+        </div>
+
+      </a> 
+      {% endfor %}
+    {% else %}
+     <h2>no blogs with this tag yet</h2>
+
+    {% endif %}
+
+  </div>

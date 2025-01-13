@@ -3,7 +3,14 @@ from .models import Post
 
 # Create your views here.
 def blogs_list(request):
-    tag=request.GET.get("q")
+    blogs = Post.objects.all()
+    context = {
+        'blogs': blogs
+    }
+    return render(request, 'blogs/blogs_list.html', context)
+
+def hx_blogs_list(request):
+    tag=request.GET.get("filter")
     if tag == None:
         blogs = Post.objects.all()
     else: 
@@ -11,7 +18,8 @@ def blogs_list(request):
     context = {
         'blogs': blogs
     }
-    return render(request, 'blogs/blogs_list.html', context)
+    return render(request, 'blogs/responses/filter_page.html', context)
+
 
 def blog_detail(request, blog_slug):
     blog = Post.objects.filter(slug=blog_slug).first() # so you get None if wrong slug

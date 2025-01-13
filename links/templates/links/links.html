@@ -1,20 +1,6 @@
 {% extends "base/base.html" %}
 
-{% block title%} Links {% endblock %}
 
 {% block content %}
-  <h2 class="fs-1 mb-3">Links I found interesting</h2>
-  <div class="container-fluid d-flex">
-    <div class="flex-fill ">
-      {% for link in links %}
-        <a class="link-underline link-underline-opacity-0" href="{{ link.url }}">
-          <div class="d-flex flex-column justify-content-center align-items-center mb-3">
-            <h2>{{ link.title }}</h2>
-            <span>{{ link.description }} -- 
-            {{ link.created |date:'M d, Y'}} </span>
-          </div>
-        </a> 
-      {% endfor %}
-    </div>
-  </div>
+  {% include "./components/links_component.html" %}
 {% endblock %}

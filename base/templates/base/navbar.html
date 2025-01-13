@@ -1,0 +1,22 @@
+<nav class="container-fluid p-3 navbar navbar-light bg-light">
+  <div class="ps-4 m-auto">
+    <a class="navbar-brand fs-1" href="{% url 'home' %}">Home</a>
+  </div>
+  <div class="pe-3 m-auto">
+    <a
+      hx-get="/hx-about"
+      hx-trigger="click"
+      hx-swap="none"
+
+      class="navbar-brand fs-2 mx-2">about</a>
+
+    <a class="navbar-brand fs-2 mx-2" href="{% url 'blogs-list' %}">blog</a>
+    <a
+      hx-get="/links/hx-links"
+      hx-trigger="click"
+      hx-swap="none"
+    class="navbar-brand fs-2 mx-2" href="{% url 'links' %}">links</a>
+    <a class="navbar-brand fs-2 mx-2" href="{% url 'projects' %}">projects</a>
+  </div>
+</nav>
+ 
